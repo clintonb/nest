@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AudioModule } from './audio/audio.module';
+import { VideoModule } from "./video/video.module";
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { AudioModule } from './audio/audio.module';
       },
     }),
     AudioModule,
+    VideoModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -5,8 +5,11 @@ import { AudioProcessor } from './audio.processor';
 
 @Module({
   imports: [
-    BullModule.registerQueue({
-      name: 'audio',
+    BullModule.registerQueueAsync({
+      useFactory: async () =>
+        ({
+          name: 'audio',
+        })
     }),
   ],
   controllers: [AudioController],
